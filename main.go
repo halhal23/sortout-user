@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sortout-user/domain"
+	"github.com/halhal23/sortout-user/domain"
 )
 
 func main() {
