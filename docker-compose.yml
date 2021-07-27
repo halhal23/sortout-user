@@ -1,0 +1,13 @@
+version: '3'
+services:
+    api:
+        build: .
+        volumes:
+            - 'data:/go'
+            - '.:/go/src/app'
+        environment:
+            - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+            - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+volumes:
+    data:
+        driver: 'local'
