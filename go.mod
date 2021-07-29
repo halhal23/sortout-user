@@ -1,5 +1,5 @@
-module app
+module sortout-user
 
 go 1.16
 
-require github.com/halhal23/sortout-user v0.0.0-20210727112655-7c4ca012fdcb
+require github.com/Pallinder/go-randomdata v1.2.0 // indirect

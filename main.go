@@ -2,11 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/halhal23/sortout-user/domain"
+	"net/http"
+
+	"sortout-user/domain"
+
+	"github.com/Pallinder/go-randomdata"
 )
 
 func main() {
-	fmt.Println("hello world sortout-user")
 	u := domain.NewUserModel("hiroharu", "hh@exam.com")
-	fmt.Printf("hello %s", u.Name)
+	name := randomdata.SillyName()
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "user: %s, and %s", u.Name, name)
+	})
+	http.ListenAndServe(":8080", nil)
 }
